@@ -1,2 +1,2 @@
-# CALCULUS
-MISCPROBMS
+# Calculus
+Miscelaneous problems in calculus
