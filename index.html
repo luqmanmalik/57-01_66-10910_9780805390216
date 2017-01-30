@@ -1,0 +1,2617 @@
+<html>
+<head>
+<title>Calculus</title>
+
+<!-- MathJax -->
+<script type="text/x-mathjax-config">MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});</script>
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+
+<!-- Ajax -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<!-- Fonts -->
+<script src="https://use.fontawesome.com/5a20d27639.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<!-- Slides -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css"> -->
+
+<style type="text/css">
+
+
+a{color: white; text-decoration: none; font-size: 13px}
+a:hover{color: lightgrey}
+/*a:active{color: grey !important}*/
+a.two{color:lightgrey; text-decoration: none}
+a.two:hover{color: grey}
+i.fa{font-size: 16px;}
+
+textarea{
+	color:lightgrey;
+	width:500px; height:1000px;
+	font-size: 11px;
+	font-family: 'Arial';
+	letter-spacing: .5px;
+	border-left: 1px solid #f2f2f2; 
+	padding:20px;
+	border-top: 1px solid #f2f2f2;
+	border-right: 1px solid #f2f2f2; 
+	border-bottom: 1px solid #f2f2f2;
+
+}
+textarea:hover{outline: 2px solid #ABDFF5}
+textarea:focus{color:grey; outline: 2px solid #ABDFF5}
+
+textarea.two{
+	width:500px; height:300px;
+	font-size: 11px;
+	font-family: 'Arial';
+	letter-spacing: .5px;
+	border-left: 1px solid #f2f2f2; padding:10px;
+	border-top: 40px solid #f2f2f2; padding:10px;
+	border-right: 1px solid #f2f2f2; padding:10px;
+	border-bottom: 1px solid #f2f2f2; padding:10px}
+}
+textarea.two:hover{outline: 2px solid #ABDFF5}
+textarea.two:focus{outline: 2px solid #ABDFF5}
+
+textarea.three{
+	width:500px; height:500px;
+	font-size: 11px;
+	font-family: 'Arial';
+	letter-spacing: .5px;
+	border-left: 1px solid #f2f2f2; padding:10px;
+	border-top: 40px solid #f2f2f2; padding:10px;
+	border-right: 1px solid #f2f2f2; padding:10px;
+	border-bottom: 1px solid #f2f2f2; padding:10px}
+}
+textarea.three:hover{outline: 2px solid #ABDFF5}
+textarea.three:focus{outline: 2px solid #ABDFF5}
+
+input[type="submit"]{border-radius: 0%; background: white; font-family: 'Arial'; font-size: 11px; border: 1px solid lightgrey; margin-top:5px; color:grey;}
+input[type="submit"]:hover{color: black; border: 1px solid grey; transition: color .1s}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+
+    display: none;
+    position: absolute;
+    left: -80px;
+    top: 24px;
+    background-color: #D2E0E8;
+    min-width: 1176px;
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
+    padding: 50px 50px;
+    opacity: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+.dropbtn{padding: 0 0 5 0}
+th{color:white; font-family:'Avenir', 'light'; font-weight:normal; text-align:left}
+
+</style>
+</head>
+
+<body>
+<div style="background:linear-gradient(lightgrey, grey); 
+			width:100%; height: 20px; margin-left:-8px; 
+			margin-top:-8px; padding:5px 1px 5px 15px; 
+			font-family:'Avenir', 'light'">	
+</div>
+
+<!-- P_set -->
+
+<div class="w3-content">
+<table class="mySlides">
+	<tr>
+		<td style="vertical-align:top; padding-right:20px">
+			<p style="padding-top:30px; padding-left:40px; color:grey; font-family:'Avenir', 'light'; font-size:18px">Single Variable Calculus, Early Transcendentals
+				<br> 
+				<span style="color:lightgrey; font-size:17px">Miscellaneous problems</span></p>
+				<table>
+					<tr>
+						<td style="vertical-align:top; padding-left:40px">1.</td>
+						<td style="vertical-align:top; padding: 1  0 0 15">
+							Using the following triginometric functions [in sf: $a \cdot \text{sin}(bx-c)+d$]
+							<br>
+							<br>
+							<table>
+								<tr>
+									<td>a) $\ y_1 = 5 \text{sin} (x)$</td>
+									<td style="padding-left:15px">b) $\ y_2 = -5 \text{sin}(x)$</td>
+								<tr>
+									<td>c) $\ y_3 = 5 \text{cos}(x)$</td>
+									<td style="padding-left:15px">d) $\ y_4 = -5 \text{cos}(x)$</td>
+								</tr>
+							</table>
+							<br>
+							find their respective amplitudes, periods, phase shifts, vertical shifts, and frequencies. Then graph them in the $xy$&ndash;plane.
+						</td>
+					</tr>
+					<tr>
+						<td>&#160</td>
+						<td>&#160</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top; padding-left:40px">2.</td>
+						<td>
+							<table>
+								<tr>
+									<td style="vertical-align:top; padding-left:15px">(a)</td>
+									<td style="vertical-align:top; padding-left:15px">
+										Find an equation of the tangent line to the hyperbola $y=3/x$ at the point (3,1). Use the point&ndash;slope form, and simplify if necessary.
+									</td>
+								</tr>
+								<tr>
+									<td style="vertical-align:top; padding-left:15px">(b)</td>
+									<td style="vertical-align:top; padding-left:15px">
+										Find an equation of the tangent line to the radiacal function 
+										<br>
+										<br>
+										$f(x) = \displaystyle\frac{2\sqrt{x-1}}{e}, \ \ \ \ g(x) = \frac{1}{\sqrt{x}}, \ \ \ \ i(x) = \sqrt{x^2+2}$ 
+										<br>
+										<br>
+										$\text{at the points} \ (3, 2\sqrt{2}/e), \ (1,1), \ \text{and} \ (2, \sqrt{6}), \ \text{respectively. Use the}$ 
+										point&ndash;slope form, and simplify if necessary. Graph $f,g \ \text{and} \ i$ seperately.
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>&#160</td>
+						<td>&#160</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top; padding: 11 0 0 40">3.</td>
+						<td style="vertical-align:top; padding-left:15px">
+							The rational function $ \ \ \displaystyle f(x)=\frac{2x^4-x^2+1}{x^2-4} \ \ $ has domain $\text{D}:\{ x \ | \ x \neq \pm 2 \}.$ <br><br>
+							<table>
+								<tr>
+									<td>(i)</td>
+									<td style="padding-left:15px">Graph the function $f$ and any of its possible asymptotes.</td>
+								</tr>
+								<tr>
+									<td>(ii)</td>
+									<td style="padding-left:15px">Give the range of the function.</td>
+								</tr>
+								<tr>
+									<td>(iii)</td>
+									<td style="padding-left:15px">State whether the function is <i>even</i> or <i>odd</i>.</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+					<tr>
+						<td>&#160</td>
+						<td>&#160</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top; padding: 11 0 0 40">4.</td>
+						<td style="vertical-align:top; padding-left:15px">
+							The rational function $ \ \ \displaystyle h(x)=\frac{ax^k-a_1x^{k-1}+a_2x^{k-2}}{(x^2-2k)!} \ \ $ has range 
+							$\text{R}:\{ x \ | \ x \neq \pm 2 \}.$ 
+							<br>
+							<br>
+							<table>
+								<tr>
+									<td>(i)</td>
+									<td style="padding-left:15px">Graph the function $h$ and any of its possible asymptotes.</td>
+								</tr>
+								<tr>
+									<td>(ii)</td>
+									<td style="padding-left:15px">Give the range of the function.</td>
+								</tr>
+								<tr>
+									<td>(iii)</td>
+									<td style="padding-left:15px">Find all combinatorial solutions for $x$.</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</p>
+		</td>
+		<td id="real" 
+			style="vertical-align:top; 
+					padding-left: 20px; 
+					border-top:40px solid #f2f2f2;  
+					border-left:1px solid #f2f2f2; 
+					width:590px;">
+			<div style="height:745; overflow:auto; padding-top:40px">
+				<table>
+			    	<tr>
+			    	  <td style="vertical-align:top">1.</td>
+			          <td style="vertical-align:top; padding: 1 0 0 15">a)</td>
+			          <td>
+			               The amplitude of $y_1$ is $|5|=5.$ 
+			               <br>
+			               Its period can be found using the formula $2\pi/|b| \  
+			               \Leftrightarrow2\pi/|1|=2\pi.$
+			               <br>
+			               Tocalculate the phase shift, we evaluate $c/b = 0/1 = 0.$
+			               <br>
+			               The vertcal shift is given by $d=0.$
+			               <br>
+			               Finally, we observe that the sine wave repeats 3 time on the interval 
+			               [-10,10].
+			          </td>
+			     	</tr>
+				</table>
+
+				<table>
+				    <tr>
+				        <td style="vertical-align:top">&#160</td>
+			          <td style="vertical-align:top; padding-left:23">b)</td>
+				        <td>
+				             The amplitude of $y_2$ is $|5|=5.$ 
+				             <br>
+				             Its period can be found using the formula $2\pi/|b| \  
+				             \Leftrightarrow2\pi/|1|=2\pi.$
+				             <br>
+				             Tocalculate the phase shift, we evaluate $c/b = 0/1 = 0.$
+				             <br>
+				             The vertcal shift is given by $d=0.$
+				             <br>
+				             Finally, we observe that the sine wave repeats 3 time on the interval 
+				             [-10,10].
+				        </td>
+				    </tr>
+				</table>
+				<div align="center" style="padding:40px 0 40px 0">
+				    <canvas id="myCanvas" width="400" height="300"></canvas>
+				    <script>
+				      function Graph(config) {
+				        // user defined properties
+				        this.canvas = document.getElementById(config.canvasId);
+				        this.minX = config.minX;
+				        this.minY = config.minY;
+				        this.maxX = config.maxX;
+				        this.maxY = config.maxY;
+				        this.unitsPerTick = config.unitsPerTick;
+
+				        // constants
+				        this.axisColor = '#aaa';
+				        this.font = '8pt Calibri';
+				        this.tickSize = 5;
+
+				        // relationships
+				        this.context = this.canvas.getContext('2d');
+				        this.rangeX = this.maxX - this.minX;
+				        this.rangeY = this.maxY - this.minY;
+				        this.unitX = this.canvas.width / this.rangeX;
+				        this.unitY = this.canvas.height / this.rangeY;
+				        this.centerY = Math.round(Math.abs(this.minY / this.rangeY) * this.canvas.height);
+				        this.centerX = Math.round(Math.abs(this.minX / this.rangeX) * this.canvas.width);
+				        this.iteration = (this.maxX - this.minX) / 1000;
+				        this.scaleX = this.canvas.width / this.rangeX;
+				        this.scaleY = this.canvas.height / this.rangeY;
+
+				        // draw x and y axis
+				        this.drawXAxis();
+				        this.drawYAxis();
+				      }
+
+				      Graph.prototype.drawXAxis = function() {
+				        var context = this.context;
+				        context.save();
+				        context.beginPath();
+				        context.moveTo(0, this.centerY);
+				        context.lineTo(this.canvas.width, this.centerY);
+				        context.strokeStyle = this.axisColor;
+				        context.lineWidth = 1;
+				        context.stroke();
+
+				        // draw tick marks
+				        var xPosIncrement = this.unitsPerTick * this.unitX;
+				        var xPos, unit;
+				        context.font = this.font;
+				        context.textAlign = 'center';
+				        context.textBaseline = 'top';
+
+				        // draw left tick marks
+				        xPos = this.centerX - xPosIncrement;
+				        unit = -1 * this.unitsPerTick;
+				        while(xPos > 0) {
+				          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+				          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+				          context.stroke();
+				          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+				          unit -= this.unitsPerTick;
+				          xPos = Math.round(xPos - xPosIncrement);
+				        }
+
+				        // draw right tick marks
+				        xPos = this.centerX + xPosIncrement;
+				        unit = this.unitsPerTick;
+				        while(xPos < this.canvas.width) {
+				          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+				          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+				          context.stroke();
+				          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+				          unit += this.unitsPerTick;
+				          xPos = Math.round(xPos + xPosIncrement);
+				        }
+				        context.restore();
+				      };
+
+				      Graph.prototype.drawYAxis = function() {
+				        var context = this.context;
+				        context.save();
+				        context.beginPath();
+				        context.moveTo(this.centerX, 0);
+				        context.lineTo(this.centerX, this.canvas.height);
+				        context.strokeStyle = this.axisColor;
+				        context.lineWidth = 1;
+				        context.stroke();
+
+				        // draw tick marks
+				        var yPosIncrement = this.unitsPerTick * this.unitY;
+				        var yPos, unit;
+				        context.font = this.font;
+				        context.textAlign = 'right';
+				        context.textBaseline = 'middle';
+
+				        // draw top tick marks
+				        yPos = this.centerY - yPosIncrement;
+				        unit = this.unitsPerTick;
+				        while(yPos > 0) {
+				          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+				          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+				          context.stroke();
+				          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+				          unit += this.unitsPerTick;
+				          yPos = Math.round(yPos - yPosIncrement);
+				        }
+
+				        // draw bottom tick marks
+				        yPos = this.centerY + yPosIncrement;
+				        unit = -1 * this.unitsPerTick;
+				        while(yPos < this.canvas.height) {
+				          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+				          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+				          context.stroke();
+				          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+				          unit -= this.unitsPerTick;
+				          yPos = Math.round(yPos + yPosIncrement);
+				        }
+				        context.restore();
+				      };
+
+				      Graph.prototype.drawEquation = function(equation, color, thickness) {
+				        var context = this.context;
+				        context.save();
+				        context.save();
+				        this.transformContext();
+
+				        context.beginPath();
+				        context.moveTo(this.minX, equation(this.minX));
+
+				        for(var x = this.minX + this.iteration; x <= this.maxX; x += this.iteration) {
+				          context.lineTo(x, equation(x));
+				        }
+
+				        context.restore();
+				        context.lineJoin = 'round';
+				        context.lineWidth = thickness;
+				        context.strokeStyle = color;
+				        context.stroke();
+				        context.restore();
+				      };
+
+				      Graph.prototype.transformContext = function() {
+				        var context = this.context;
+
+				        // move context to center of canvas
+				        this.context.translate(this.centerX, this.centerY);
+
+				        /*
+				         * stretch grid to fit the canvas window, and
+				         * invert the y scale so that that increments
+				         * as you move upwards
+				         */
+				        context.scale(this.scaleX, -this.scaleY);
+				      };
+				      var myGraph = new Graph({
+				        canvasId: 'myCanvas',
+				        minX: -10,
+				        minY: -10,
+				        maxX: 10,
+				        maxY: 10,
+				        unitsPerTick: 5
+				      });
+
+				      myGraph.drawEquation(function(x) {
+				        return 5 * Math.sin(x);
+				      }, 'red', 1);
+
+				      myGraph.drawEquation(function(x) {
+				        return 5 * -Math.sin(x);
+				      }, 'blue', 1);
+
+				      myGraph.drawEquation(function(x) {
+				        return 5 * Math.cos(x);
+				      }, 'green', 1);
+
+				      myGraph.drawEquation(function(x) {
+				        return 5 * -Math.cos(x);
+				      }, 'purple', 1);
+
+				      /*myGraph.drawEquation(function(x) {
+				        return x * x;
+				      }, 'blue', 1);*/
+
+				      /*myGraph.drawEquation(function(x) {
+				        return 1 * x;
+				      }, 'red', 1);*/
+
+				    </script>
+				   </div>
+
+				<table>
+				     <tr>
+				          <td style="vertical-align:top">&#160</td>
+			          	  <td style="vertical-align:top; padding-left:20">c)</td>
+				          <td>
+				               The amplitude of $y_3$ is $|5|=5.$ 
+				               <br>
+				               Its period can be found using the formula $2\pi/|b| \  
+				               \Leftrightarrow2\pi/|1|=2\pi.$
+				               <br>
+				               Tocalculate the phase shift, we evaluate $c/b = 0/1 = 0.$
+				               <br>
+				               The vertcal shift is given by $d=0.$
+				               <br>
+				               Finally, we observe that the sine wave repeats 3 time on the interval 
+				               [-10,10].
+				          </td>
+				     </tr>
+				</table>
+
+				<table>
+				     <tr>
+				          <td style="vertical-align:top">&#160</td>
+			              <td style="vertical-align:top; padding-left:20">d)</td>
+				          <td>
+				               The amplitude of $y_4$ is $|5|=5.$ 
+				               <br>
+				               Its period can be found using the formula $2\pi/|b| \  
+				               \Leftrightarrow2\pi/|1|=2\pi.$
+				               <br>
+				               Tocalculate the phase shift, we evaluate $c/b = 0/1 = 0.$
+				               <br>
+				               The vertcal shift is given by $d=0.$
+				               <br>
+				               Finally, we observe that the sine wave repeats 3 time on the interval 
+				               [-10,10].
+				          </td>
+				     </tr>
+				</table>
+				<br>
+				<br>
+					<table>
+						<tr>
+						<td style="vertical-align:top">2.</td>
+						<td style="vertical-align:top; padding-left:15px">a)</td>
+						<td>
+						Let $f(x)=3/x.$ Then the slope of the tangent at the point (3,1) is 
+
+						$$\begin{align}
+						\displaystyle m 
+						&= \lim_{h \rightarrow 0} \ \frac{f(3+h)-f(3)}{h} 
+						= \lim_{h \rightarrow 0} \frac{\displaystyle\frac{3}{3+h}-1}{h}
+						= \lim_{h \rightarrow 0} \frac{\displaystyle\frac{3-(3+h)}{3+h}}{h} \\ \\
+						&= \lim_{h \rightarrow 0} \frac{-h}{h(3+h)}
+						= \lim_{h \rightarrow 0} -\frac{1}{3+h}
+						= -\frac{1}{3} = -0.\overline{33} \ \ \square
+						\end{align}$$
+
+						Therefore, an equation of the tangent at the point (3,1) is
+
+						$$y-1=-\frac{1}{3}(x-3) \ \Leftrightarrow \ y = -\frac{x}{3}+2 \ \Leftrightarrow \ x+3y-6=0. \ \ \square$$
+
+						<div align="center" style="padding:30 0 60 0">
+						    <canvas id="myCanvas0" width="400" height="300"></canvas>
+						    <script>
+						      function Graph(config) {
+						        // user defined properties
+						        this.canvas = document.getElementById(config.canvasId);
+						        this.minX = config.minX;
+						        this.minY = config.minY;
+						        this.maxX = config.maxX;
+						        this.maxY = config.maxY;
+						        this.unitsPerTick = config.unitsPerTick;
+
+						        // constants
+						        this.axisColor = 'aaa';
+						        this.font = '8pt Calibri';
+						        this.tickSize = 5;
+
+						        // relationships
+						        this.context = this.canvas.getContext('2d');
+						        this.rangeX = this.maxX - this.minX;
+						        this.rangeY = this.maxY - this.minY;
+						        this.unitX = this.canvas.width / this.rangeX;
+						        this.unitY = this.canvas.height / this.rangeY;
+						        this.centerY = Math.round(Math.abs(this.minY / this.rangeY) * this.canvas.height);
+						        this.centerX = Math.round(Math.abs(this.minX / this.rangeX) * this.canvas.width);
+						        this.iteration = (this.maxX - this.minX) / 1000;
+						        this.scaleX = this.canvas.width / this.rangeX;
+						        this.scaleY = this.canvas.height / this.rangeY;
+
+						        // draw x and y axis
+						        this.drawXAxis();
+						        this.drawYAxis();
+						      }
+
+						      Graph.prototype.drawXAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(0, this.centerY);
+						        context.lineTo(this.canvas.width, this.centerY);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var xPosIncrement = this.unitsPerTick * this.unitX;
+						        var xPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'center';
+						        context.textBaseline = 'top';
+
+						        // draw left tick marks
+						        xPos = this.centerX - xPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(xPos > 0) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit -= this.unitsPerTick;
+						          xPos = Math.round(xPos - xPosIncrement);
+						        }
+
+						        // draw right tick marks
+						        xPos = this.centerX + xPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(xPos < this.canvas.width) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit += this.unitsPerTick;
+						          xPos = Math.round(xPos + xPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawYAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(this.centerX, 0);
+						        context.lineTo(this.centerX, this.canvas.height);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var yPosIncrement = this.unitsPerTick * this.unitY;
+						        var yPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'right';
+						        context.textBaseline = 'middle';
+
+						        // draw top tick marks
+						        yPos = this.centerY - yPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(yPos > 0) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit += this.unitsPerTick;
+						          yPos = Math.round(yPos - yPosIncrement);
+						        }
+
+						        // draw bottom tick marks
+						        yPos = this.centerY + yPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(yPos < this.canvas.height) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit -= this.unitsPerTick;
+						          yPos = Math.round(yPos + yPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawEquation = function(equation, color, thickness) {
+						        var context = this.context;
+						        context.save();
+						        context.save();
+						        this.transformContext();
+
+						        context.beginPath();
+						        context.moveTo(this.minX, equation(this.minX));
+
+						        for(var x = this.minX + this.iteration; x <= this.maxX; x += this.iteration) {
+						          context.lineTo(x, equation(x));
+						        }
+
+						        context.restore();
+						        context.lineJoin = 'round';
+						        context.lineWidth = thickness;
+						        context.strokeStyle = color;
+						        context.stroke();
+						        context.restore();
+						      };
+
+						      Graph.prototype.transformContext = function() {
+						        var context = this.context;
+
+						        // move context to center of canvas
+						        this.context.translate(this.centerX, this.centerY);
+
+						        /*
+						         * stretch grid to fit the canvas window, and
+						         * invert the y scale so that that increments
+						         * as you move upwards
+						         */
+						        context.scale(this.scaleX, -this.scaleY);
+						      };
+						      var myGraph0 = new Graph({
+						        canvasId: 'myCanvas0',
+						        minX: -10,
+						        minY: -10,
+						        maxX: 10,
+						        maxY: 10,
+						        unitsPerTick: 5
+						      });
+
+						      var n = 0.0000001;
+
+						      myGraph0.drawEquation(function(x) {
+						        return -x/3+2;
+						      }, 'red', 1);
+
+						      myGraph0.drawEquation(function(x) {
+						        return 3/(x+n);
+						      }, '#aaa', 1);
+
+						    </script>
+						</div>
+						</td>
+						</tr>
+						<tr>
+						<td style="vertical-align:top">2.</td>
+						<td style="vertical-align:top; padding-left:15px">b)</td>
+						<td>
+						If we let $f(x) = 2\sqrt{x-1}/e,$
+						 then the slope of the tangent line to the curve $f$ at $P= (3,(2\sqrt{2}/e))$ is given by.
+						$$\begin{align}
+						m 
+						&= \lim_{h \rightarrow 0} \frac{f(3+h)-f(3)}{h} 
+						= \lim_{h \rightarrow 0} \frac{\displaystyle\frac{2\sqrt{(3+h)-1}}{e} - \frac{2\sqrt{3-1}}{e}}{h} \\ \\
+						&= \lim_{h \rightarrow 0} \frac{2\sqrt{2+h}-2\sqrt{2}}{(h)(e)} = \frac{2(\sqrt{2+h}-\sqrt{2})}{(h)(e)} \\ \\ 
+						&= \boxed{\begin{array}{lcl} \\ \ \ 0.260130... \ \ \\ \ \end{array}}
+						\end{align}$$
+
+						Therefore, an equation of the tangent at the point $(3, (2\sqrt{2}/e))$ is
+
+						$$\begin{align}y-\frac{2\sqrt{2}}{e} = 0.26013(x-3) \ 
+						\Leftrightarrow \ 
+						y &= 0.26013(x-3)+\frac{2\sqrt{2}}{e} \\ 
+						&= (0.26013x-0.78039)+\frac{2\sqrt{2}}{e} \\ 
+						& = 0.26013x+0.26013. \\
+						& \ \square
+						\end{align}$$
+
+						<div align="center" style="padding:30 0 60 0">
+						    <canvas id="rad_func" width="400" height="300"></canvas>
+						    <script>
+						      function Graph(config) {
+						        // user defined properties
+						        this.canvas = document.getElementById(config.canvasId);
+						        this.minX = config.minX;
+						        this.minY = config.minY;
+						        this.maxX = config.maxX;
+						        this.maxY = config.maxY;
+						        this.unitsPerTick = config.unitsPerTick;
+
+						        // constants
+						        this.axisColor = 'aaa';
+						        this.font = '8pt Calibri';
+						        this.tickSize = 5;
+
+						        // relationships
+						        this.context = this.canvas.getContext('2d');
+						        this.rangeX = this.maxX - this.minX;
+						        this.rangeY = this.maxY - this.minY;
+						        this.unitX = this.canvas.width / this.rangeX;
+						        this.unitY = this.canvas.height / this.rangeY;
+						        this.centerY = Math.round(Math.abs(this.minY / this.rangeY) * this.canvas.height);
+						        this.centerX = Math.round(Math.abs(this.minX / this.rangeX) * this.canvas.width);
+						        this.iteration = (this.maxX - this.minX) / 1000;
+						        this.scaleX = this.canvas.width / this.rangeX;
+						        this.scaleY = this.canvas.height / this.rangeY;
+
+						        // draw x and y axis
+						        this.drawXAxis();
+						        this.drawYAxis();
+						      }
+
+						      Graph.prototype.drawXAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(0, this.centerY);
+						        context.lineTo(this.canvas.width, this.centerY);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var xPosIncrement = this.unitsPerTick * this.unitX;
+						        var xPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'center';
+						        context.textBaseline = 'top';
+
+						        // draw left tick marks
+						        xPos = this.centerX - xPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(xPos > 0) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit -= this.unitsPerTick;
+						          xPos = Math.round(xPos - xPosIncrement);
+						        }
+
+						        // draw right tick marks
+						        xPos = this.centerX + xPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(xPos < this.canvas.width) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit += this.unitsPerTick;
+						          xPos = Math.round(xPos + xPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawYAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(this.centerX, 0);
+						        context.lineTo(this.centerX, this.canvas.height);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var yPosIncrement = this.unitsPerTick * this.unitY;
+						        var yPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'right';
+						        context.textBaseline = 'middle';
+
+						        // draw top tick marks
+						        yPos = this.centerY - yPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(yPos > 0) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit += this.unitsPerTick;
+						          yPos = Math.round(yPos - yPosIncrement);
+						        }
+
+						        // draw bottom tick marks
+						        yPos = this.centerY + yPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(yPos < this.canvas.height) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit -= this.unitsPerTick;
+						          yPos = Math.round(yPos + yPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawEquation = function(equation, color, thickness) {
+						        var context = this.context;
+						        context.save();
+						        context.save();
+						        this.transformContext();
+
+						        context.beginPath();
+						        context.moveTo(this.minX, equation(this.minX));
+
+						        for(var x = this.minX + this.iteration; x <= this.maxX; x += this.iteration) {
+						          context.lineTo(x, equation(x));
+						        }
+
+						        context.restore();
+						        context.lineJoin = 'round';
+						        context.lineWidth = thickness;
+						        context.strokeStyle = color;
+						        context.stroke();
+						        context.restore();
+						      };
+
+						      Graph.prototype.transformContext = function() {
+						        var context = this.context;
+
+						        // move context to center of canvas
+						        this.context.translate(this.centerX, this.centerY);
+
+						        /*
+						         * stretch grid to fit the canvas window, and
+						         * invert the y scale so that that increments
+						         * as you move upwards
+						         */
+						        context.scale(this.scaleX, -this.scaleY);
+						      };
+						      var rad_func_a = new Graph({
+						        canvasId: 'rad_func',
+						        minX: -10,
+						        minY: -10,
+						        maxX: 10,
+						        maxY: 10,
+						        unitsPerTick: 5
+						      });
+
+						      rad_func_a.drawEquation(function(x) {
+						        return (2*Math.sqrt(x-1))/Math.E;
+						      }, 'grey', 1);
+
+						      rad_func_a.drawEquation(function(x) {
+						        return (0.26013*x)+0.26013;
+						      }, 'red', 1);
+
+						    </script>
+						   </div>
+
+						If we let $g(x) = 1/\sqrt{x},$ where $\sqrt{x} \neq 0,$ then the slope of the tangent line to the curve $g$ at the point $P = (1,1)$ is given by
+
+						$$\begin{align}
+						m &= \lim_{h\rightarrow0} \frac{f(1+h)-f(1)}{h} = \lim_{h\rightarrow0} \frac{\displaystyle\frac{1}{\sqrt{1+h}}-1}{h} \\ \\
+						&= \lim_{h\rightarrow0} \frac{\displaystyle\frac{\sqrt{1+h}}{1+h}-\frac{1+h}{1+h}}{h} = \lim_{h\rightarrow 0} \frac{\sqrt{1+h}-(1+h)}{h(1+h)} \\ \\
+						&= -\frac{1}{2} = -0.5. \ \ \square
+						\end{align}$$
+
+						Therefore, an equation of the tangent line at $P$ is
+						$$\begin{align}
+						y-1 = -\frac{1}{2}(x-1) \ \Leftrightarrow \ 
+						y &= \frac{-(x-1)}{2} +1 = \frac{-x+1+2}{2} \\
+						&= \frac{-x+3}{2} =\frac{-(x-3)}{2} \\ 
+						&= -\frac{x-3}{2} \\
+						& \ \square
+						\end{align}$$
+
+						<div align="center" style="padding:30 0 60 0">
+						    <canvas id="rad_func0" width="400" height="300"></canvas>
+						    <script>
+						      function Graph(config) {
+						        // user defined properties
+						        this.canvas = document.getElementById(config.canvasId);
+						        this.minX = config.minX;
+						        this.minY = config.minY;
+						        this.maxX = config.maxX;
+						        this.maxY = config.maxY;
+						        this.unitsPerTick = config.unitsPerTick;
+
+						        // constants
+						        this.axisColor = 'aaa';
+						        this.font = '8pt Calibri';
+						        this.tickSize = 5;
+
+						        // relationships
+						        this.context = this.canvas.getContext('2d');
+						        this.rangeX = this.maxX - this.minX;
+						        this.rangeY = this.maxY - this.minY;
+						        this.unitX = this.canvas.width / this.rangeX;
+						        this.unitY = this.canvas.height / this.rangeY;
+						        this.centerY = Math.round(Math.abs(this.minY / this.rangeY) * this.canvas.height);
+						        this.centerX = Math.round(Math.abs(this.minX / this.rangeX) * this.canvas.width);
+						        this.iteration = (this.maxX - this.minX) / 1000;
+						        this.scaleX = this.canvas.width / this.rangeX;
+						        this.scaleY = this.canvas.height / this.rangeY;
+
+						        // draw x and y axis
+						        this.drawXAxis();
+						        this.drawYAxis();
+						      }
+
+						      Graph.prototype.drawXAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(0, this.centerY);
+						        context.lineTo(this.canvas.width, this.centerY);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var xPosIncrement = this.unitsPerTick * this.unitX;
+						        var xPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'center';
+						        context.textBaseline = 'top';
+
+						        // draw left tick marks
+						        xPos = this.centerX - xPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(xPos > 0) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit -= this.unitsPerTick;
+						          xPos = Math.round(xPos - xPosIncrement);
+						        }
+
+						        // draw right tick marks
+						        xPos = this.centerX + xPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(xPos < this.canvas.width) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit += this.unitsPerTick;
+						          xPos = Math.round(xPos + xPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawYAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(this.centerX, 0);
+						        context.lineTo(this.centerX, this.canvas.height);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var yPosIncrement = this.unitsPerTick * this.unitY;
+						        var yPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'right';
+						        context.textBaseline = 'middle';
+
+						        // draw top tick marks
+						        yPos = this.centerY - yPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(yPos > 0) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit += this.unitsPerTick;
+						          yPos = Math.round(yPos - yPosIncrement);
+						        }
+
+						        // draw bottom tick marks
+						        yPos = this.centerY + yPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(yPos < this.canvas.height) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit -= this.unitsPerTick;
+						          yPos = Math.round(yPos + yPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawEquation = function(equation, color, thickness) {
+						        var context = this.context;
+						        context.save();
+						        context.save();
+						        this.transformContext();
+
+						        context.beginPath();
+						        context.moveTo(this.minX, equation(this.minX));
+
+						        for(var x = this.minX + this.iteration; x <= this.maxX; x += this.iteration) {
+						          context.lineTo(x, equation(x));
+						        }
+
+						        context.restore();
+						        context.lineJoin = 'round';
+						        context.lineWidth = thickness;
+						        context.strokeStyle = color;
+						        context.stroke();
+						        context.restore();
+						      };
+
+						      Graph.prototype.transformContext = function() {
+						        var context = this.context;
+
+						        // move context to center of canvas
+						        this.context.translate(this.centerX, this.centerY);
+
+						        /*
+						         * stretch grid to fit the canvas window, and
+						         * invert the y scale so that that increments
+						         * as you move upwards
+						         */
+						        context.scale(this.scaleX, -this.scaleY);
+						      };
+						      var rad_func_graf = new Graph({
+						        canvasId: 'rad_func0',
+						        minX: -10,
+						        minY: -10,
+						        maxX: 10,
+						        maxY: 10,
+						        unitsPerTick: 5
+						      });
+
+						      rad_func_graf.drawEquation(function(x) {
+						        return 1/Math.sqrt(x);
+						      }, 'grey', 1);
+
+						      rad_func_graf.drawEquation(function(x) {
+						        return -1*(x-3)/2;
+						      }, 'red', 1);
+
+						    </script>
+						   </div>
+
+						Let $i(x) = \sqrt{x^2+2}$. Then the slope of the tangent at the point $(2,\sqrt{6})$ is
+
+						$$\begin{align}
+						m &= \lim_{h\rightarrow0} \frac{i(2+h)-i(2)}{h} = \lim_{h\rightarrow
+						0}\frac{\sqrt{(2+h)^2+2}-\sqrt{6}}{h} \\ \\ 
+						&= \lim_{h\rightarrow 0} \frac{\sqrt{6+4h+h^2}-\sqrt{6}}{h} \\ \\
+						&= \boxed{\begin{array}{lcl} \\ \ \ 0.8165 \ \ \\ \ \end{array}}
+						\end{align}$$
+
+						Therefore an equation of the tangent line at $(2,\sqrt{6})$ is given by
+
+						$$\begin{align}
+						y-\sqrt{6} = 0.8165(x-2) \ \Leftrightarrow \ y &= 0.8165x-1.63299+\sqrt{6} \\
+						&=0.8165x + 0.8165. \\
+						& \ \square
+						\end{align}$$
+
+						<div align="center" style="padding:30 0 60 0">
+						    <canvas id="quad_func_Can" width="400" height="300"></canvas>
+						    <script>
+						      function Graph(config) {
+						        // user defined properties
+						        this.canvas = document.getElementById(config.canvasId);
+						        this.minX = config.minX;
+						        this.minY = config.minY;
+						        this.maxX = config.maxX;
+						        this.maxY = config.maxY;
+						        this.unitsPerTick = config.unitsPerTick;
+
+						        // constants
+						        this.axisColor = 'aaa';
+						        this.font = '8pt Calibri';
+						        this.tickSize = 5;
+
+						        // relationships
+						        this.context = this.canvas.getContext('2d');
+						        this.rangeX = this.maxX - this.minX;
+						        this.rangeY = this.maxY - this.minY;
+						        this.unitX = this.canvas.width / this.rangeX;
+						        this.unitY = this.canvas.height / this.rangeY;
+						        this.centerY = Math.round(Math.abs(this.minY / this.rangeY) * this.canvas.height);
+						        this.centerX = Math.round(Math.abs(this.minX / this.rangeX) * this.canvas.width);
+						        this.iteration = (this.maxX - this.minX) / 1000;
+						        this.scaleX = this.canvas.width / this.rangeX;
+						        this.scaleY = this.canvas.height / this.rangeY;
+
+						        // draw x and y axis
+						        this.drawXAxis();
+						        this.drawYAxis();
+						      }
+
+						      Graph.prototype.drawXAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(0, this.centerY);
+						        context.lineTo(this.canvas.width, this.centerY);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var xPosIncrement = this.unitsPerTick * this.unitX;
+						        var xPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'center';
+						        context.textBaseline = 'top';
+
+						        // draw left tick marks
+						        xPos = this.centerX - xPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(xPos > 0) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit -= this.unitsPerTick;
+						          xPos = Math.round(xPos - xPosIncrement);
+						        }
+
+						        // draw right tick marks
+						        xPos = this.centerX + xPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(xPos < this.canvas.width) {
+						          context.moveTo(xPos, this.centerY - this.tickSize / 2);
+						          context.lineTo(xPos, this.centerY + this.tickSize / 2);
+						          context.stroke();
+						          context.fillText(unit, xPos, this.centerY + this.tickSize / 2 + 3);
+						          unit += this.unitsPerTick;
+						          xPos = Math.round(xPos + xPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawYAxis = function() {
+						        var context = this.context;
+						        context.save();
+						        context.beginPath();
+						        context.moveTo(this.centerX, 0);
+						        context.lineTo(this.centerX, this.canvas.height);
+						        context.strokeStyle = this.axisColor;
+						        context.lineWidth = 1;
+						        context.stroke();
+
+						        // draw tick marks
+						        var yPosIncrement = this.unitsPerTick * this.unitY;
+						        var yPos, unit;
+						        context.font = this.font;
+						        context.textAlign = 'right';
+						        context.textBaseline = 'middle';
+
+						        // draw top tick marks
+						        yPos = this.centerY - yPosIncrement;
+						        unit = this.unitsPerTick;
+						        while(yPos > 0) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit += this.unitsPerTick;
+						          yPos = Math.round(yPos - yPosIncrement);
+						        }
+
+						        // draw bottom tick marks
+						        yPos = this.centerY + yPosIncrement;
+						        unit = -1 * this.unitsPerTick;
+						        while(yPos < this.canvas.height) {
+						          context.moveTo(this.centerX - this.tickSize / 2, yPos);
+						          context.lineTo(this.centerX + this.tickSize / 2, yPos);
+						          context.stroke();
+						          context.fillText(unit, this.centerX - this.tickSize / 2 - 3, yPos);
+						          unit -= this.unitsPerTick;
+						          yPos = Math.round(yPos + yPosIncrement);
+						        }
+						        context.restore();
+						      };
+
+						      Graph.prototype.drawEquation = function(equation, color, thickness) {
+						        var context = this.context;
+						        context.save();
+						        context.save();
+						        this.transformContext();
+
+						        context.beginPath();
+						        context.moveTo(this.minX, equation(this.minX));
+
+						        for(var x = this.minX + this.iteration; x <= this.maxX; x += this.iteration) {
+						          context.lineTo(x, equation(x));
+						        }
+
+						        context.restore();
+						        context.lineJoin = 'round';
+						        context.lineWidth = thickness;
+						        context.strokeStyle = color;
+						        context.stroke();
+						        context.restore();
+						      };
+
+						      Graph.prototype.transformContext = function() {
+						        var context = this.context;
+
+						        // move context to center of canvas
+						        this.context.translate(this.centerX, this.centerY);
+
+						        /*
+						         * stretch grid to fit the canvas window, and
+						         * invert the y scale so that that increments
+						         * as you move upwards
+						         */
+						        context.scale(this.scaleX, -this.scaleY);
+						      };
+						      var quad_func_graf = new Graph({
+						        canvasId: 'quad_func_Can',
+						        minX: -10,
+						        minY: -10,
+						        maxX: 10,
+						        maxY: 10,
+						        unitsPerTick: 5
+						      });
+
+						      var n = 0.0000001;
+
+						      quad_func_graf.drawEquation(function(x) {
+						        return (0.8165*x)+0.8165;
+						      }, 'red', 1);
+
+						      quad_func_graf.drawEquation(function(x) {
+						        return Math.sqrt(Math.pow(x,2)+2);
+						      }, '#aaa', 1);
+
+						    </script>
+						</div>
+						</td>
+						</tr>
+						</table>					
+			</div>
+			</td>
+			</tr>
+			</table>					
+		</td>
+	</tr>
+</table>
+<table class="mySlides">
+	<tr>
+		<td style="vertical-align:top; padding-right:80px">
+			<p style="padding-top:30px; padding-left:40px; color:grey; font-family:'Avenir', 'light'; font-size:18px">
+				Calculus: Fourth Edition
+				<br>
+				<span style="color:lightgrey; font-size:15px">Michael Spivak</span>
+			</p>
+			<p style="padding-top:20px; padding-left:40px">
+				<span style="padding-right:15px">4.</span> Find all numbers $x$ for which <br><br>
+				<table>
+					<tr>
+						<td style="padding-left:29px">(i)</td>
+						<td style="padding-left:15px">$4-x < 3-2x.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ii)</td>
+						<td style="padding-left:15px">$5-x^2 < 8.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iii)</td>
+						<td style="padding-left:15px">$5-x^2 < -2.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px; vertical-align:top">(iv)</td>
+						<td style="padding-left:15px">$(x-1)(x-3) > 0.$</span> (When is a product of two numbers positive?)</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(v)</td>
+						<td style="padding-left:15px">$x^2-2x+2 > 0.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vi)</td>
+						<td style="padding-left:15px">$x^2+x+1 > 2.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vii)</td>
+						<td style="padding-left:15px">$x^2-x+10 > 16.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(viii)</td>
+						<td style="padding-left:15px">$x^2+x+1 > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ix)</td>
+						<td style="padding-left:15px">$(x-\pi)(x+5)(x-3) > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(x)</td>
+						<td style="padding-left:15px">$(x-\sqrt[3]{2})(x-\sqrt{2}) > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xi)</td>
+						<td style="padding-left:15px">$2^x < 8.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xii)</td>
+						<td style="padding-left:15px">$x+3^x < 4.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xiii)</td>
+						<td style="padding-left:15px">$\frac{\Large 1}{\Large x} \ + \frac{\Large 1}{\Large 1-x} \ > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xiv)</td>
+						<td style="padding-left:15px">$\frac{\Large x-1}{\Large x+1} \ > 0.$</td> 
+					</tr>
+				</table>
+			</p>
+			<p style="padding-top:20px; padding-left:40px">
+				<span style="padding-right:15px">5.</span> Prove the following: <br><br>
+				<table>
+					<tr>
+						<td style="padding-left:29px">(i)</td>
+						<td style="padding-left:15px">If $a < b$ and > $c < d,$ then $a+c < b+d.$</span></td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ii)</td>
+						<td style="padding-left:15px">If $a < b,$ then $-b < -a.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iii)</td>
+						<td style="padding-left:15px">If $a < b$ and $c > d,$ then $a-c < b-d.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iv)</td>
+						<td style="padding-left:15px">If $a < b$ and $c > 0,$ then $ac < bd.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(v)</td>
+						<td style="padding-left:15px">If $a < b$ and $c < 0,$ then $ac > bd.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vi)</td>
+						<td style="padding-left:15px">If $a > 1,$ then $a^2 > a.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vii)</td>
+						<td style="padding-left:15px">If $0 < a < 1,$ then $a^2 < a.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(viii)</td>
+						<td style="padding-left:15px">If $0 \leq a < b,$ and $0 \leq c < d,$ then $ac < bd.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ix)</td>
+						<td style="padding-left:15px">If $0 \leq a < b,$ then $a^2 \leq b^2.$ (Use (iii).)</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(x)</td>
+						<td style="padding-left:15px">If $a, b \geq 0$ and $a^2 < b^2,$ then $a < b.$ (Use (ix), backwards.)</td> 
+					</tr>
+				</table>
+			</p>
+		</td>
+		<td id="real2" style="vertical-align:top; padding-left: 55px; padding-top:50px; border-top: 40px solid #f2f2f2; border-left:1px solid #f2f2f2; width:570px">
+			<div style="font-size:15px; height: 740px; overflow:auto">
+									<table>
+<tr>
+<td style="padding-right:10px">4.</td>
+<td style="padding-right:15px">(i)</td>
+<td style="padding-top:0px">
+$(4-x < 3-2x) \ \ \Leftrightarrow \ \ (-x +2x < 3-4) \ \ \Leftrightarrow \ \ (x < -1).$
+</td>
+</tr>
+<tr>
+<td style="padding-right:10px">$ \ $</td>
+<td style="padding-right:15px">(ii)</td>
+<td>
+$(5-x^2 < 8) \ \ \Leftrightarrow \ \ (x^2 > -3) \ \ \Leftrightarrow \ \ (x > \sqrt{-3}),$ so all $x.$
+</td>
+</tr>
+<tr>
+<td style="padding-right:10px">$ \ $</td>
+<td style="padding-right:15px">(iii)</td>
+<td>
+$(5-x^2 < -2) \ \ \Leftrightarrow \ \ (x^2 > 7) \ \ \Leftrightarrow \ \ (x > \sqrt{7}),$ or $x < - \sqrt{7}.$
+</td>
+</tr>
+<tr>
+<td style="padding-right:10px">$ \ $</td>
+<td style="padding-right:15px">(iv)</td>
+<td>
+$(x-1)(x-3) > 0 \ \ \Leftrightarrow \ \ x < 1$ or $x > 3.$
+</td>
+</tr>
+<tr>
+<td style="padding-right:10px">$ \ $</td>
+<td style="padding-right:15px">$ \ $</td>
+<td>
+<br>
+The product of two numbers $a$ and $b$ is positive when $a,b > 0$ or $a,b<0.$
+<br>
+<br>
+<u>Proof</u>: 
+<br>
+<br>
+The first condition, i.e., $a,b>0$ is trivial, and follows from P12 &ndash; Closure under multiplication. The second can be proved as follows:
+<br>
+<br>
+Corollary: $$\begin{array}{rcl} (-a) \cdot b + a \cdot b &=& [(-a)+a] \cdot b \\ 
+&=& 0 \cdot b = 0. \\ 
+&\downarrow& \\ 
+-(a \cdot b) & \ & -(a \cdot b) \\ 
+&\downarrow& \\ 
+(-a) \cdot b &=& -(a \cdot b). \end{array}$$ Moreover, 
+$$\begin{array}{rcl} (-a) \cdot (-b) + [-(a \cdot b )] &=& (-a) \cdot (-b) + (-a)      
+\cdot b \\ 
+&=& (-a)[(-b)+b] \cdot b = 0. \\ &\downarrow& \\ 
++ (a \cdot b) & \ & +(a \cdot b) \\ &\downarrow& \\ 
+(-a) \cdot (-b) &=& a \cdot b. \\ 
+&\square&\end{array}$$
+</td>
+</tr>
+<tr>
+<td style="padding-right:10px">$ \ $</td>
+<td style="vertical-align:top; padding-right:15px">(v)</td>
+<td style="vertical-align:top; padding-top:3px">
+Given that 
+<br>
+<br>
+$x^2-2x+2 > 0 \Leftrightarrow x^2-2x+1+1 >0 \\ 
+\Leftrightarrow (x-1)(x-1)+1 > 0  
+\Leftrightarrow (x-1)^2+1 > 0,$
+<br>
+we know that $x^2-2x+2>0$ for all $x.$
+<br>
+<br>
+<br>
+</td>
+</tr>
+<tr>
+<td style="padding-right:10px">$ \ $</td>
+<td style="vertical-align:top; padding-right:15px">(vi)</td>
+<td style="vertical-align:top; padding-top:3px">
+First, let us refine the inequality as follows
+<br>
+<br>
+$x^2+x+1>2 \ \Leftrightarrow \ x^2+x-1>0.$
+<br>
+<br>
+$\text{Using the quadratic equation:} \ \ \displaystyle x_{1,2}=\frac{-b \pm  
+\sqrt{b^2-4ac}}{2a}, \ \ \text{with}$ $a=1, \ b=1, \ c=-1$, we have
+<br>
+<br>
+$\displaystyle x=\frac{-1 +\sqrt{1^2-(4)(1)(-1)}}{2 \cdot1} = \frac{-1 +\sqrt{5}}{2},$
+<br>
+<br>
+$\displaystyle x=\frac{-1 -\sqrt{1^2-(4)(1)(-1)}}{2 \cdot1} = \frac{-1 -\sqrt{5}}{2}. \ \ \text{Hence, we have}$
+<br>
+<br>
+$\displaystyle x = \frac{-1+\sqrt{5}}{2}, \ \ \ \ \text{and} \ \ \ \ x = \frac{-1-\sqrt{5}}{2}, \ \text{which may be factored into}$
+<br>
+<br>
+$\displaystyle\bigg(x + \frac{1-\sqrt{5}}{2}\bigg)\bigg(x + \frac{1+\sqrt{5}}{2}\bigg)>0. \ \text{Next we need to compute the signs}$
+<br>
+<br>
+of each of the factors.
+<br>
+<br>
+$\text{a.)} \ \ \displaystyle x + \frac{1-\sqrt{5}}{2} = 0 \ \Leftrightarrow \ 
+x=\frac{\sqrt{5}-1}{2}$
+<br>
+<br>
+$\text{b.)} \ \ \displaystyle x + \frac{1-\sqrt{5}}{2} < 0 \ \Leftrightarrow \ x<\frac{\sqrt{5}-1}{2}$
+<br>
+<br>
+$\text{c.)} \ \ \displaystyle x + \frac{1-\sqrt{5}}{2} > 0 \ \Leftrightarrow \ x>\frac{\sqrt{5}-1}{2}$
+<br>
+<br>
+<br>
+$\text{d.)} \ \ \displaystyle x + \frac{1+\sqrt{5}}{2} = 0 \ \Leftrightarrow \ 
+x=\frac{-1-\sqrt{5}}{2}$
+<br>
+<br>
+$\text{e.)} \ \ \displaystyle x + \frac{1+\sqrt{5}}{2} < 0 \ \Leftrightarrow \ 
+x<\frac{-1-\sqrt{5}}{2}$
+<br>
+<br>
+$\text{f.)} \ \ \displaystyle x + \frac{1+\sqrt{5}}{2} > 0 \ \Leftrightarrow \ 
+x>\frac{-1-\sqrt{5}}{2}$
+<br>
+<br>
+Finally, choosing ranges that satisfy the condition "$>0$", we have
+<br>
+<br>
+$\displaystyle x^2+x+1>2 \ \Leftrightarrow \ x>\frac{\sqrt{5}-1}{2} \ \text{or} \ 
+x<\frac{-1-\sqrt{5}}{2}. \ \ \ \square$
+</td>
+</tr>
+</table>					                          					
+			</div>
+		</td>
+	</tr>
+</table>
+<table class="mySlides">
+	<tr>
+		<td style="vertical-align:top; padding-right:80px">
+			<p style="padding-top:30px; padding-left:40px; color:grey; font-family:'Avenir', 'light'; font-size:18px">
+				Calculus: Fourth Edition
+				<br>
+				<span style="color:lightgrey; font-size:15px">Michael Spivak</span>
+			</p>
+			<p style="padding-top:20px; padding-left:40px">
+				<span style="padding-right:15px">3.</span> Prove the following: <br><br>
+				<table>
+					<tr>
+						<td style="padding-left:29px; padding-bottom:10px">(i)</td>
+						<td style="padding-left:15px; padding-bottom:10px">${\Large\frac{a}{b}} = {\Large\frac{ac}{bc}}$, if $b,c \neq 0.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px; padding-bottom:10px">(ii)</td>
+						<td style="padding-left:15px; padding-bottom:10px">${\Large\frac{a}{b}} + {\Large\frac{c}{d}} = \frac{{\Large ad \ + \ bc}}{\Large bd}$, if $b,d \neq 0.$</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top; padding-left:29px; padding-bottom:10px">(iii)</td>
+						<td style="padding-left:15px; padding-bottom:10px">$(ab)^{-1}=a^{-1}b^{-1},$ if $a,b \neq 0.$ (To do this, you must remembr the <br> defining property of $(ab)^{-1}$).</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px; padding-bottom:10px">(iv)</td>
+						<td style="padding-left:15px; padding-bottom:10px">${\Large\frac{a}{b}} \cdot {\Large\frac{c}{d}} = \frac{{\Large ac}}{\Large db}$, if $b,d \neq 0.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px; padding-bottom:10px">(v)</td>
+						<td style="padding-left:15px; padding-bottom:10px">${\Large\frac{a}{b}} {\Large /} {\Large\frac{c}{d}} = \frac{{\Large ad}}{\Large bc}$, if $b,c,d \neq 0.$</td>
+					</tr>
+					<tr>
+						<td style="vertical-align:top; padding-left:29px">(vi)</td>
+						<td style="padding-left:15px">If $b,d \neq 0$, then $\frac{{\Large a}}{{\Large b}} = \frac{{\Large c}}{{\Large d}}$ if and only if $ad=bc.$ Also
+							determine <br> when $\frac{{\Large a}}{{\Large b}} = \frac{{\Large b}}{{\Large a}}.$</td> 
+					</tr>
+				</table>
+			</p>
+			
+			<!-- Answer area -->
+			<form action="Calculus_4E_C1.php" method="post" style="padding-left:50px">
+				<p> 
+					<br>
+					<br>
+					<textarea class="three" name="p3" id="txt3" autofocus>
+					<?php
+				      $servername = "localhost";
+				      $username = "root";
+				      $password = "root";
+				      $dbname = "C4EMS";
+
+				      // 1. Create connection to server
+				      $conn = new mysqli($servername, $username, $password, $dbname);
+
+				      // 2. Check connection
+				      if ($conn->connect_error) {
+				          die("Connection failed: " . $conn->connect_error);
+				      } 
+				      // echo "<br> Message 1: Connected successfully to Forms. <br><br>";
+
+				      // 3. Check for user input
+				      $value = $_POST['p3'];
+
+				      // Retreives data from table
+				      $sql = "SELECT * FROM c1";
+				      $result = $conn->query($sql);
+
+				      $sql = "SELECT * FROM c1";
+				      $result = $conn->query($sql);
+
+				        if ($result->num_rows > 0) {
+				          // output data of each row
+				          while($row = $result->fetch_assoc()) {
+				          echo $row["p3"];
+				          }
+				        } 
+
+				      // Insert data into demo
+				      if ($value == $row["p3"]) {
+				        echo $value;
+				      }
+				      elseif ($value == TRUE){
+				      $sql = "INSERT INTO c1 (p3) VALUES ('$value')";
+
+				      if ($conn->query($sql) === TRUE) {
+
+				      } else {
+				          echo "Error: " . $sql . "<br>" . $conn->error;
+				      }
+				      }
+
+				      ?>
+					</textarea>
+				</p>
+				<!-- Submit -->
+				<input type="submit" onclick="formsubmit()" value="Check Answer">
+			</form>
+		</td>
+		<td id="real3" style="vertical-align:top; padding-left: 55px; padding-top:50px; border-top: 40px solid #f2f2f2; border-left:1px solid #f2f2f2; width:570px">
+			<script>
+			$(document).ready(function(){
+			    $('#txt3').keyup(function(){
+			        $('#real3').html($(this).val());
+			        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "real3"]);
+			    });
+			});
+			</script>
+			<!-- Output -->
+			<div style="font-size:15px">
+				<?php
+					$answer = $_POST['p3'];
+					$canswer ='(i)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $\frac{{\Large ac}}{{\Large bc}} = \frac{{\Large a}}{{\Large b}} \cdot \frac{{\Large c}}{{\Large c}} = \frac{{\Large a}}{{\Large b}} \cdot 1 = \frac{{\Large a}}{{\Large b}}. \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:10px"><u>Proof$_\textsf{T}:$</u></td><td style="padding-left:15px; padding-top:10px"> $a/b = ab^{-1} = (ac)(b^{-1}c^{-1}) = (ac)(bc)^{-1} \ (\text{by (iii)}) = ac/bc. \ \ \square$ </td></tr></table> <br><br>(ii)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $\begin{eqnarray}\frac{a}{b} + \frac{c}{d} &=& \bigg( \frac{d}{d} \bigg) \cdot \frac{a}{b} + \bigg( \frac{b}{b} \bigg) \cdot \frac{c}{d} \\\\ &=& \frac{ad+bc}{bd.} \\\\ & \ \square&\end{eqnarray}$ </td></tr></table> <br>(iii)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $(ab)^{-1} = 1/ab = (1/a) \cdot (1/b) = a^{-1}b^{-1}. \ \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $ab(a^{-1}b^{-1}) = (a \cdot a^{-1})(b \cdot b^{-1}) = 1, \text{so} \ a^{-1} \cdot b^{-1} = (ab)^{-1}. \ \ \ \square$ </td></tr></table> <br><br>(iv)<br><table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $(a/b)(c/d) = (ab^{-1})(cd^{-1})  = (ac)(b^{-1}d^{-1}) = (ac)(bd)^{-1} (\text{by (iii)}) \\\\ = \ (ac)/(bd). \ \ \ \square$ </td></tr></table> <br><br>(v)<br><table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof</u>:</td><td style="padding-left:15px; padding-top:15px"> $\frac{\Large a}{\Large b} {\Large /} \frac{\Large c}{\Large d} = \frac{\Large a}{\Large b} \cdot \frac{\Large d}{\Large c} = \frac{\Large ac}{\Large bd}. \ \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $\begin{eqnarray}(a/b)/(c/d) &=& (a/b)(c/d)^{-1} = (ab^{-1})(cd^{-1})^{-1} \\\\ &=& (ab^{-1})(c^{-1}d) = ad(b^{-1}c^{-1}) = ad(bc)^{-1} = (ad)/(bc). \\\\ & \ \square&\end{eqnarray}$ </td></tr></table> <br>(vi)<br> <table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof</u>:</td><td style="padding-left:15px; padding-top:15px">If $ab^{-1} = cd^{-1}$, then $(ab^{-1})bd = (cd^{-1})bd,$ or $ad=bc.$ Conversely, if <br> $ad= bc,$ then $(ad)d^{-1}b^{-1} = (bc)d^{-1}b^{-1},$ or $ab^{-1} = cd^{-1}.$ If $ab^{-1} = ba^{-1},$ <br> then $a^2=b^2,$ so by Problem 1(iii), $a=b$ or $a=-b.$ Conversely, if $a=b,$ <br> then $a/b=b/a=1$ and if $a=-b,$ then $a/b=b/a=-1. \ \ \ \square$ </td></tr></table>';
+					$correct = "<div style='color:#ABDFF5; font-size:14px; font-family:Avenir' align='right'><br><br>Complete.</div>";
+
+					echo $answer;
+					if ($answer == $canswer) {
+						echo $correct;
+					}
+					elseif ($answer == "") {
+						echo "";
+					}
+					else{echo "<div style='color:#B3D4E3; font-size:14px; font-family:Avenir' align='right'><br><br>Error &ndash; 3(iv)</div>";}
+				?>
+			</div>
+		</td>
+	</tr>
+</table>
+<table class="mySlides">
+	<tr>
+		<td style="vertical-align:top; padding-right:80px">
+			<p style="padding-top:30px; padding-left:40px; color:grey; font-family:'Avenir', 'light'; font-size:18px">
+				Calculus: Fourth Edition
+				<br>
+				<span style="color:lightgrey; font-size:15px">Michael Spivak</span>
+			</p>
+			<p style="padding-top:20px; padding-left:40px">
+				<span style="padding-right:15px">4.</span> Find all numbers $x$ for which <br><br>
+				<table>
+					<tr>
+						<td style="padding-left:29px">(i)</td>
+						<td style="padding-left:15px">$4-x < 3-2x.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ii)</td>
+						<td style="padding-left:15px">$5-x^2 < 8.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iii)</td>
+						<td style="padding-left:15px">$5-x^2 < -2.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iv)</td>
+						<td style="padding-left:15px">$(x-1)(x-3) > 0.$</span> (When is a product of two numbers positive?</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(v)</td>
+						<td style="padding-left:15px">$x^2-2x+2 > 0.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vi)</td>
+						<td style="padding-left:15px">$x^2+x+1 > 2.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vii)</td>
+						<td style="padding-left:15px">$x^2-x+10 > 16.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(viii)</td>
+						<td style="padding-left:15px">$x^2+x+1 > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ix)</td>
+						<td style="padding-left:15px">$(x-\pi)(x+5)(x-3) > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(x)</td>
+						<td style="padding-left:15px">$(x-\sqrt[3]{2})(x-\sqrt{2}) > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xi)</td>
+						<td style="padding-left:15px">$2^x < 8.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xii)</td>
+						<td style="padding-left:15px">$x+3^x < 4.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xiii)</td>
+						<td style="padding-left:15px">$\frac{\Large 1}{\Large x} \ + \frac{\Large 1}{\Large 1-x} \ > 0.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(xiv)</td>
+						<td style="padding-left:15px">$\frac{\Large x-1}{\Large x+1} \ > 0.$</td> 
+					</tr>
+				</table>
+			</p>
+			
+			<!-- Answer area -->
+			<form action="Calculus_4E_C1.php" method="post" style="padding-left:50px">
+				<p> 
+					<br>
+					<br>
+					<textarea class="three" name="p4" id="txt4" style="height:1250px" autofocus>
+					<?php
+				      $servername = "localhost";
+				      $username = "root";
+				      $password = "root";
+				      $dbname = "C4EMS";
+
+				      // 1. Create connection to server
+				      $conn = new mysqli($servername, $username, $password, $dbname);
+
+				      // 2. Check connection
+				      if ($conn->connect_error) {
+				          die("Connection failed: " . $conn->connect_error);
+				      } 
+				      // echo "<br> Message 1: Connected successfully to Forms. <br><br>";
+
+				      // 3. Check for user input
+				      $value = $_POST['p4'];
+
+				      // Retreives data from table
+				      $sql = "SELECT * FROM c1";
+				      $result = $conn->query($sql);
+
+				      $sql = "SELECT * FROM c1";
+				      $result = $conn->query($sql);
+
+				        if ($result->num_rows > 0) {
+				          // output data of each row
+				          while($row = $result->fetch_assoc()) {
+				          echo $row["p4"];
+				          }
+				        } 
+
+				      // Insert data into c1
+				      if ($value == $row["p4"]) {
+				        echo $value;
+				      }
+				      elseif ($value == TRUE){
+				      $sql = "INSERT INTO c1 (p4) VALUES ('$value')";
+
+				      if ($conn->query($sql) === TRUE) {
+
+				      } else {
+				          echo "Error: " . $sql . "<br>" . $conn->error;
+				      }
+				      }
+
+				      ?>
+					</textarea>
+				</p>
+				<!-- Submit -->
+				<input type="submit" onclick="formsubmit()" value="Check Answer">
+			</form>
+		</td>
+		<td id="real4" style="vertical-align:top; padding-left: 40px; padding-top:50px; border-top: 40px solid #f2f2f2; border-left:1px solid #f2f2f2; width:570px">
+			<script>
+			$(document).ready(function(){
+			    $('#txt4').keyup(function(){
+			        $('#real4').html($(this).val());
+			        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "real4"]);
+			    });
+			});
+			</script>
+			<!-- Output -->
+			<div style="font-size:15px">
+				<?php
+					$answer = $_POST['p4'];
+					$canswer ='(i)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $\frac{{\Large ac}}{{\Large bc}} = \frac{{\Large a}}{{\Large b}} \cdot \frac{{\Large c}}{{\Large c}} = \frac{{\Large a}}{{\Large b}} \cdot 1 = \frac{{\Large a}}{{\Large b}}. \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:10px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:10px"> $a/b = ab^{-1} = (ac)(b^{-1}c^{-1}) = (ac)(bc)^{-1} \ (\text{by (iii)}) = ac/bc. \ \ \square$ </td></tr></table> <br><br>(ii)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $\begin{eqnarray}\frac{a}{b} + \frac{c}{d} &=& \bigg( \frac{d}{d} \bigg) \cdot \frac{a}{b} + \bigg( \frac{b}{b} \bigg) \cdot \frac{c}{d} \\\\ &=& \frac{ad+bc}{bd.} \\\\ & \ \square&\end{eqnarray}$ </td></tr></table> <br>(iii)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $(ab)^{-1} = 1/ab = (1/a) \cdot (1/b) = a^{-1}b^{-1}. \ \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $ab(a^{-1}b^{-1}) = (a \cdot a^{-1})(b \cdot b^{-1}) = 1, \text{so} \ a^{-1} \cdot b^{-1} = (ab)^{-1}. \ \ \ \square$ </td></tr></table> <br><br>(iv)<br><table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $(a/b)(c/d) = (ab^{-1})(cd^{-1})  = (ac)(b^{-1}d^{-1}) = (ac)(bd)^{-1} (\text{by (iii)}) \\\\ = \ (ac)/(bd). \ \ \ \square$ </td></tr></table> <br><br>(v)<br><table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof</u>:</td><td style="padding-left:15px; padding-top:15px"> $\frac{\Large a}{\Large b} {\Large /} \frac{\Large c}{\Large d} = \frac{\Large a}{\Large b} \cdot \frac{\Large d}{\Large c} = \frac{\Large ac}{\Large bd}. \ \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $\begin{eqnarray}(a/b)/(c/d) &=& (a/b)(c/d)^{-1} = (ab^{-1})(cd^{-1})^{-1} \\\\ &=& (ab^{-1})(c^{-1}d) = ad(b^{-1}c^{-1}) = ad(bc)^{-1} = (ad)/(bc). \\\\ & \ \square&\end{eqnarray}$ </td></tr></table> <br>(vi)<br> <table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof</u>:</td><td style="padding-left:15px; padding-top:15px">If $ab^{-1} = cd^{-1}$, then $(ab^{-1})bd = (cd^{-1})bd,$ or $ad=bc.$ Conversely, if <br> $ad= bc,$ then $(ad)d^{-1}b^{-1} = (bc)d^{-1}b^{-1},$ or $ab^{-1} = cd^{-1}.$ If $ab^{-1} = ba^{-1},$ <br> then $a^2=b^2,$ so by Problem 1(iii), $a=b$ or $a=-b.$ Conversely, if $a=b,$ <br> then $a/b=b/a=1$ and if $a=-b,$ then $a/b=b/a=-1. \ \ \ \square$ </td></tr></table>';
+					$correct = "<div style='color:#ABDFF5; font-size:14px; font-family:Avenir' align='right'><br><br>Complete.</div>";
+
+					echo $answer;
+					if ($answer == $canswer) {
+						echo $correct;
+					}
+					elseif ($answer == "") {
+						echo "";
+					}
+					else{echo "<div style='color:#B3D4E3; font-size:14px; font-family:Avenir' align='right'><br><br>Error &ndash; 3(iv)</div>";}
+				?>
+			</div>
+		</td>
+	</tr>
+</table>
+<table class="mySlides">
+	<tr>
+		<td style="vertical-align:top; padding-right:80px">
+			<p style="padding-top:30px; padding-left:40px; color:grey; font-family:'Avenir', 'light'; font-size:18px">
+				Calculus: Fourth Edition
+				<br>
+				<span style="color:lightgrey; font-size:15px">Michael Spivak</span>
+			</p>
+			<p style="padding-top:20px; padding-left:40px">
+				<span style="padding-right:15px">5.</span> Prove the following: <br><br>
+				<table>
+					<tr>
+						<td style="padding-left:29px">(i)</td>
+						<td style="padding-left:15px">If $a < b$ and > $c < d,$ then $a+c < b+d.$</span></td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ii)</td>
+						<td style="padding-left:15px">If $a < b,$ then $-b < -a.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iii)</td>
+						<td style="padding-left:15px">If $a < b$ and $c > d,$ then $a-c < b-d.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(iv)</td>
+						<td style="padding-left:15px">If $a < b$ and $c > 0,$ then $ac < bd.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(v)</td>
+						<td style="padding-left:15px">If $a < b$ and $c < 0,$ then $ac > bd.$</td>
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vi)</td>
+						<td style="padding-left:15px">If $a > 1,$ then $a^2 > a.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(vii)</td>
+						<td style="padding-left:15px">If $0 < a < 1,$ then $a^2 < a.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(viii)</td>
+						<td style="padding-left:15px">If $0 \leq a < b,$ and $0 \leq c < d,$ then $ac < bd.$</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(ix)</td>
+						<td style="padding-left:15px">If $0 \leq a < b,$ then $a^2 \leq b^2.$ (Use (iii).)</td> 
+					</tr>
+					<tr>
+						<td style="padding-left:29px">(x)</td>
+						<td style="padding-left:15px">If $a, b \geq 0$ and $a^2 < b^2,$ then $a < b.$ (Use (ix), backwards.)</td> 
+					</tr>
+				</table>
+			</p>
+			
+			<!-- Answer area -->
+			<form action="Calculus_4E_C1.php" method="post" style="padding-left:50px">
+				<p> 
+					<br>
+					<br>
+					<textarea class="three" name="p5" id="txt5" autofocus></textarea>
+				</p>
+				<!-- Submit -->
+				<input type="submit" onclick="formsubmit()" value="Check Answer">
+			</form>
+		</td>
+		<td id="real5" style="vertical-align:top; padding-left: 55px; padding-top:50px; border-top: 40px solid #f2f2f2; border-left:1px solid #f2f2f2; width:570px">
+			<script>
+			$(document).ready(function(){
+			    $('#txt5').keyup(function(){
+			        $('#real5').html($(this).val());
+			        MathJax.Hub.Queue(["Typeset", MathJax.Hub, "real5"]);
+			    });
+			});
+			</script>
+			<!-- Output -->
+			<div style="font-size:15px">
+				<?php
+					$answer = $_POST['textarea3'];
+					$canswer ='(i)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $\frac{{\Large ac}}{{\Large bc}} = \frac{{\Large a}}{{\Large b}} \cdot \frac{{\Large c}}{{\Large c}} = \frac{{\Large a}}{{\Large b}} \cdot 1 = \frac{{\Large a}}{{\Large b}}. \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:10px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:10px"> $a/b = ab^{-1} = (ac)(b^{-1}c^{-1}) = (ac)(bc)^{-1} \ (\text{by (iii)}) = ac/bc. \ \ \square$ </td></tr></table> <br><br>(ii)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $\begin{eqnarray}\frac{a}{b} + \frac{c}{d} &=& \bigg( \frac{d}{d} \bigg) \cdot \frac{a}{b} + \bigg( \frac{b}{b} \bigg) \cdot \frac{c}{d} \\\\ &=& \frac{ad+bc}{bd.} \\\\ & \ \square&\end{eqnarray}$ </td></tr></table> <br>(iii)<br><br> <table><tr><td style="vertical-align:top"><u>Proof</u>:</td><td style="padding-left:15px"> $(ab)^{-1} = 1/ab = (1/a) \cdot (1/b) = a^{-1}b^{-1}. \ \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $ab(a^{-1}b^{-1}) = (a \cdot a^{-1})(b \cdot b^{-1}) = 1, \text{so} \ a^{-1} \cdot b^{-1} = (ab)^{-1}. \ \ \ \square$ </td></tr></table> <br><br>(iv)<br><table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $(a/b)(c/d) = (ab^{-1})(cd^{-1})  = (ac)(b^{-1}d^{-1}) = (ac)(bd)^{-1} (\text{by (iii)}) \\\\ = \ (ac)/(bd). \ \ \ \square$ </td></tr></table> <br><br>(v)<br><table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof</u>:</td><td style="padding-left:15px; padding-top:15px"> $\frac{\Large a}{\Large b} {\Large /} \frac{\Large c}{\Large d} = \frac{\Large a}{\Large b} \cdot \frac{\Large d}{\Large c} = \frac{\Large ac}{\Large bd}. \ \ \ \square$ </td></tr><tr><td style="vertical-align:top; padding-top:15px"><u>Proof$_\textsf{T}$</u>:</td><td style="padding-left:15px; padding-top:15px"> $\begin{eqnarray}(a/b)/(c/d) &=& (a/b)(c/d)^{-1} = (ab^{-1})(cd^{-1})^{-1} \\\\ &=& (ab^{-1})(c^{-1}d) = ad(b^{-1}c^{-1}) = ad(bc)^{-1} = (ad)/(bc). \\\\ & \ \square&\end{eqnarray}$ </td></tr></table> <br>(vi)<br> <table><tr><td style="vertical-align:top; padding-top:15px"><u>Proof</u>:</td><td style="padding-left:15px; padding-top:15px">If $ab^{-1} = cd^{-1}$, then $(ab^{-1})bd = (cd^{-1})bd,$ or $ad=bc.$ Conversely, if <br> $ad= bc,$ then $(ad)d^{-1}b^{-1} = (bc)d^{-1}b^{-1},$ or $ab^{-1} = cd^{-1}.$ If $ab^{-1} = ba^{-1},$ <br> then $a^2=b^2,$ so by Problem 1(iii), $a=b$ or $a=-b.$ Conversely, if $a=b,$ <br> then $a/b=b/a=1$ and if $a=-b,$ then $a/b=b/a=-1. \ \ \ \square$ </td></tr></table>';
+					$correct = "<div style='color:#ABDFF5; font-size:14px; font-family:Avenir' align='right'><br><br>Complete.</div>";
+
+					echo $answer;
+					if ($answer == $canswer) {
+						echo $correct;
+					}
+					elseif ($answer == "") {
+						echo "";
+					}
+					else{echo "<div style='color:#B3D4E3; font-size:14px; font-family:Avenir' align='right'><br><br>Error &ndash; 3(iv)</div>";}
+				?>
+			</div>
+		</td>
+	</tr>
+</table>
+
+<script>
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  x[slideIndex-1].style.display = "block";
+}
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+</script>
+
+<!-- Notepad -->
+<p style="font-size:13px; color:lightgrey; font-family:'Avenir', 'light'; margin-left:10px">
+	Notepad
+	<!-- Answer area -->
+	<form action="Calculus_4E_C1.php" method="post" style="padding-left:10px">
+			<textarea style="width:98%; height:100px"></textarea>
+		<!-- Submit -->
+		<input type="submit" onclick="formsubmit()" value="Submit">
+	</form>
+</p>
+
+<!-- PSET Menue -->
+<div style="background:none; width:100%; height: 20px; margin-left:-8px; margin-top:-8px; padding:5px 1px 5px 15px; font-family:'Avenir', 'light'">
+
+	<table style="position:absolute; top:-10px; font-size:13px">
+		<tr>
+			<td>
+				<a style="float:left" href="https://github.com/luqmanmalik">
+					<i style="font-size:21px" class="fa fa-github" aria-hidden="true"></i>
+				</a>
+			</td>
+			<td>
+				<ul style="float:left">
+			      <li class="dropdown">
+					<a class="dropbtn" href="#" style="margin-left:-30">Problems</a>
+					<div  id="myDropdown" class="dropdown-content">
+			          <table style="width:100%">
+			          	<tr>
+			          		<td><a href="#">Basic Properties of Numbers</a></td>
+			          		<td><a href="#">Numbers of Various Sorts</a></th>
+			          		<td><a href="#">Functions</a></th>
+			          		<td><a href="#">Graphs</a></th>
+			          	</tr>
+			          	<tr>
+			          		<td>
+			          			<a onclick="currentDiv(1)" href="#">1</a>
+			          			<a onclick="currentDiv(2)" href="#">2</a>
+			          			<a onclick="currentDiv(3)" href="#">3</a>
+			          			<a onclick="currentDiv(4)" href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          	</tr>
+			          	<tr><th>&#160</th></tr>
+			          	<tr>
+			          		<td><a href="#">Limits</th>
+			          		<td><a href="#">Continuous Functions<a/></th>
+			          		<td><a href="#">Three Hard Theorems</a></th>
+			          		<td><a href="#">Least Upper Bounds</a></th>
+			          	</tr>
+			          	<tr>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          	</tr>
+			          	<tr><th>&#160</th></tr>
+			          	<tr>
+			          		<td><a href="#">Limits</a></th>
+			          		<td><a href="#">Derivatives</a></th>
+			          		<td><a href="#">Differentiation</a></th>
+			          		<td><a href="#">Significance of the Derivative</a></th>
+			          	</tr>
+			          	<tr>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          	</tr>
+			          	<tr><th>&#160</th></tr>
+			          	<tr>
+			          		<td><a href="#">Inverse Functions</a></th>
+			          		<td><a href="#">Integrals</a></th>
+			          		<td><a href="#">The Fundamental Theorem of Calculus</a></th>
+			          		<td><a href="#">The Trigonometric Functions</a></th>
+			          	</tr>
+			          	<tr>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          	</tr>
+			          	<tr><th>&#160</th></tr>
+			          	<tr>
+			          		<td><a href="#">&pi; is Irrational</a></th>
+			          		<td><a href="#">Planetary Motion</a></th>
+			          		<td><a href="#">The Logarithmic + Exponential Functions</a></th>
+			          		<td><a href="#">Integration in Elementary Terms</a></th>
+			          	</tr>
+			          	<tr>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          		<td>
+			          			<a href="#">1</a>
+			          			<a href="#">2</a>
+			          			<a href="#">3</a>
+			          			<a href="#">4</a>
+			          			<a href="#">5</a>
+			          			<a href="#">6</a>
+			          			<a href="#">7</a>
+			          			<a href="#">8</a>
+			          			<a href="#">9</a>
+			          			<a href="#">10</a>
+			          			<a href="#">11</a>
+			          			<a href="#">12</a>
+			          			<a href="#">13</a>
+			          			<a href="#">14</a>
+			          			<br>
+			          			<a href="#">15</a>
+			          			<a href="#">16</a>
+			          			<a href="#">17</a>
+			          			<a href="#">18</a>
+			          			<a href="#">19</a>
+			          			<a href="#">20</a>
+			          			<a href="#">21</a>
+			          			<a href="#">22</a>
+			          			<a href="#">23</a>
+			          			<a href="#">24</a>
+			          			<a href="#">25</a>
+			          		</td>
+			          	</tr>
+			          </table>
+			        </div>
+			      </li>
+			  	</ul>
+			</td>
+			<td style="position:relative; left:1120">
+				<div class="container">
+					<div style="float:left; margin-top:1">
+						<a onclick="plusDivs(-1)" style="cursor:default; font-size:15px">&#9508;</a>
+					</div>
+					<script>
+						function myFunction() {
+						    document.getElementById("myDropdown").classList.toggle("show");
+						}
+
+						// Close the dropdown if the user clicks outside of it
+						window.onclick = function(event) {
+						  if (!event.target.matches('.material-icons')) {
+
+						    var dropdowns = document.getElementsByClassName("dropdown-content");
+						    var i;
+						    for (i = 0; i < dropdowns.length; i++) {
+						      var openDropdown = dropdowns[i];
+						      // if (openDropdown.classList.contains('show')) {
+						      //   openDropdown.classList.remove('show');
+						      // }
+						    }
+						  }
+						}
+					</script>
+					<div style="float:left; margin-top:1">
+						<a onclick="plusDivs(1)" style="cursor:default; font-size:15px">&#9500;</a>
+					</div>
+				</div>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
