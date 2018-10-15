@@ -1,5 +1,5 @@
-## Calculus on Manifolds: A Modern approach to Classical Theorems of Advanced Calculus
-### Problem Sets &#9634; Michael Spivak
+## MSC2010-57-01_66-10910
+### Calculus on Manifolds: A Modern approach to Classical Theorems of Advanced Calculus &#9634; Michael Spivak
 #### Solutions by Luqman Malik
 
 This is the second installment in Spivak's analysis sequence. A strong footing in _Calculus, A Hitchhiker's Guide to Calculus_, and the present text should prepare the serious student of mathematical analysis for Spivak's five–volume _Comprehensive introduction to Differential Geometry_. Mathematicians use to polorize over the supremecy of pure versus applied mathematics; that paradigm has all but vanished. Today, it is a question of algebra versus analysis. If one finds themself pivoting between the two, I have no doubt that an honest attempt at Spivak will settle the matter for them.
