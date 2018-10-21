@@ -1,4 +1,4 @@
-## MSC2010_57-01_66-10910
+## 57-01_66-10910_9780805390216
 ### Calculus on Manifolds: A Modern approach to Classical Theorems of Advanced Calculus &#9634; Michael Spivak
 #### Solutions by Luqman Malik
 
