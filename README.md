@@ -1,4 +1,5 @@
-## Calculus on Manifolds: A Modern approach to Classical Theorems of Advanced Calculus &#9634; Michael Spivak
+## Calculus on Manifolds
+### A Modern approach to Classical Theorems of Advanced Calculus
 #### MSC2010_LCCCN_ISBN: 57-01_66-10910_9780805390216
 ```
 TXT Author: Michael Spivak  
