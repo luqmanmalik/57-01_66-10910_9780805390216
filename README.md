@@ -1,12 +1,12 @@
 ## Calculus on Manifolds
-### A Modern Approach to Classical Theorems of Advanced Calculus
+### A Contemporary Approach to Classical Theorems of Formal Calculus
 #### MSC2010_LCCCN_ISBN: 57-01_66-10910_9780805390216
 ```
-TXT Author: Michael Spivak  
-Publisher: Publish or Perish, Inc.  
-ſ-SETS Author/Developer: Luqman Malik
-······································
-©Hilix Research and Technologies, Inc.
+Luqman Malik
+IMU P-RNK: 1A (adv. baccalaureate)  
+Series: Foundations in Mathematical Analysis
+····························································  
+Distribution license: Hilix Research and Technologies, Inc.®
 ```
 ---
 ### CONTENTS 
